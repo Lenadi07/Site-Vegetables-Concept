@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html ng-app="vege">
+  <head>
+    <meta charset="utf-8">
+    <title>vegetables</title>
+  <!--  <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/media_queries.css" media="only screen and (max-width:1000px)">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="css/res2.css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="head">
+      <nav id="mainmenu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Specials</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="home">
+      <h1 class="h1head animate-first animate-reveal">Veggies es bonus vobis,<br>
+        proinde vos postulo essum.<br><img id="decoration1" src="img\decoration1.png" alt="" /></h1>
+        </div>
+      </div>
+      <section class="group">
+      <section class="col columns1"><img class="anima" src="img\icon1.png" alt="" /><h2>Turnip greens</h2><p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor lacus sed diam rhoncus, nec facilisis metus vulputate. Integer sagittis vehicula eros.
+      </p></section>
+      <section class="col columns2"><img class="anima" src="img\icon2.png" alt="" /><h2>Beetroot water</h2><p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor lacus sed diam rhoncus, nec facilisis metus vulputate. Integer sagittis vehicula eros.
+      </p></section>
+      <section class="col columns3"><img class="anima" src="img\icon3.png" alt="" /><h2>GET SOCIAL</h2><p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor lacus sed diam rhoncus, nec facilisis metus vulputate. Integer sagittis vehicula eros.
+      </p></section>
+      </section>
+      <section class="about">
+        <div class="description">
+        <h3>About us</h3>
+        <img src="img\decoration1.png" alt="" />
+        <p>
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor lacus sed diam rhoncus. Nori grape silver beet broccoli kombu beet greens fava bean potato.
+        </p>
+        </div>
+      </section>
+      <section id="dishesmenu">
+
+  <!--Angular part changing dish menu -->
+
+        <div class="anglexperience" ng-controller="MenuController">
+          <h3>Menu <br><img src="img\decoration1.png" alt="" /></h3>
+          <nav id="secondmenu">
+            <ul>
+            <li class="navli" ng-class="{active:isSelected(1)}"><a ng-click="select(1)">Starters</a></li>
+            <li class="navli" ng-class="{active:isSelected(2)}"><a ng-click="select(2)">Main Dishes</a></li>
+            <li class="navli" ng-class="{active:isSelected(3)}"><a ng-click="select(3)">Desserts</a></li>
+            <li class="navli" ng-class="{active:isSelected(4)}"><a ng-click="select(4)">Drinks</a></li>
+            </ul>
+          </nav>
+         <div class="flextable">
+        <ul class="menulist menulistfirst" >
+          <li class="" ng-repeat="dish in dishes | filter:filtText">
+            <div class="spaceBetween">
+            <p>{{dish.name}}{{dish.price}}</p>
+            <p>{{dish.description}}</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="menulist menulisttwo" >
+          <li class="" ng-repeat="dish in dishes | filter:filtText">
+            <div class="spaceBetween">
+            <p>{{dish.name}}{{dish.price}}</p>
+            <p>{{dish.description}}</p>
+            </div>
+          </li>
+        </ul>
+        </div>
+        </div>
+      </section>
+      <!--eng angular changing dish menu-->
+      <section class="feedback">
+         <img src="img\form2.jpg" alt="" />
+             <h3 class="end">Contact<br><!--<img  src="img\decoration1.png" alt="" />--></h3>
+          <div class="flexthree">
+            <div class="rw">
+          <address class="adress">
+            <h4>Veggie</h4>
+            3423 Magnolia Avenue<br>Hickeltown, NJ0784
+          </address></div>
+          <div class="rw adress">
+            <h4>Reservations</h4>
+            <p>
+              reservations@veggie.com<br>+2366320373729
+            </p>
+            </div>
+          </div>
+        <form novalidate class="angularform" name="form" ng-controller="FeedbackController">
+          <label for="field firstname"><input type="text" name="firstname" placeholder="Name" ng-model="user.name" required>
+          <span ng-show="form.firstname.$dirty && form.firstname.$error.required">*</span></label>
+          <label for="field email"><input type="email" name="email" placeholder="Email" ng-model="user.email" required>
+          <span ng-show="form.email.$dirty && form.email.$invalid">*</span></label>
+          <label for="field message"><textarea name="message" rows="1" cols="58">Message</textarea></label>
+          <div class="submit"><input type="submit" value="send" ng-disabled="form.$invalid"></div>
+        </form>
+        <div class="socicon">
+          <a href="#"><img src="img\iconInsta.png" alt="insta" /></a>
+          <a href="#"><img src="img\iconFb.png" alt="facebook"/></a>
+        </div>
+      </section>
+      </div>
+      <script src="D:\шаблоны\templatesWp\vege\node_modules\angular\angular.min.js"></script>
+      <script src="D:\шаблоны\templatesWp\vege\js\app.js"></script>
+  </body>
+</html>

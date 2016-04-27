@@ -1,0 +1,29 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  outline: none;
+}
+@media screen and (max-width:1000px) {
+  body {
+    text-align: center;
+  }
+  #head {
+    display: block;
+    background: white;
+  }
+  #mainmenu nav a {
+    display: inline-block;
+    width: 30%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .about {
+    background: #EFEFEF;
+    text-align: center;
+    display: block;
+  }
+  .description {
+    display: inline-block;
+    width: 55%;
+  }
+}
